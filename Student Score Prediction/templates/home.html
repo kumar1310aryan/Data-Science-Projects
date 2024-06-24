@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student Score Prediction</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="login">
+      <h1>Student Score Prediction</h1>
+
+      <!-- Main Input For Receiving Query to our ML -->
+      <form action="{{ url_for('predict_score')}}" method="post">
+        <input
+          type="text"
+          name="Hours"
+          placeholder="Hours Studied"
+          required="required"
+        /><br />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+          Predict
+        </button>
+      </form>
+      <h2>Expected percentage = {{result}}</h2>
+    </div>
+  </body>
+</html>
